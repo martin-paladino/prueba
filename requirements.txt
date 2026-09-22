@@ -1,0 +1,4 @@
+numpy
+pillow
+imageio-ffmpeg
+piper-tts
