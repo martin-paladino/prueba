@@ -1498,7 +1498,7 @@ def render_chunk(args):
     load(build)
     p = subprocess.Popen([FFMPEG, "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24",
                           "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-", "-c:v", "libx264", "-preset", "medium",
-                          "-crf", "18", "-pix_fmt", "yuv420p", out], stdin=subprocess.PIPE)
+                          "-crf", "25", "-tune", "animation", "-pix_fmt", "yuv420p", out], stdin=subprocess.PIPE)
     for fi in range(f0, f1):
         p.stdin.write(frame(fi / FPS).tobytes())
         if (fi - f0) % 150 == 0:

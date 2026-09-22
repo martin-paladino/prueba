@@ -1,0 +1,212 @@
+1
+00:00:02,500 --> 00:00:06,381
+Dentro de tu cerebro hay unas 86 mil millones de neuronas.
+
+2
+00:00:06,831 --> 00:00:11,286
+Y cada una depende de una pequeña proteína para mantener su forma y funcionar bien:
+
+3
+00:00:11,286 --> 00:00:12,145
+la proteína tau.
+
+4
+00:00:14,045 --> 00:00:17,157
+Una neurona tiene un cuerpo celular, con su núcleo,
+
+5
+00:00:17,157 --> 00:00:19,477
+y una prolongación larga llamada axón,
+
+6
+00:00:19,477 --> 00:00:22,833
+que puede medir desde milímetros hasta más de un metro.
+
+7
+00:00:23,283 --> 00:00:27,289
+Por el axón viajan constantemente mitocondrias, vesículas y proteínas,
+
+8
+00:00:27,289 --> 00:00:30,494
+desde el cuerpo celular hasta la sinapsis, y de regreso.
+
+9
+00:00:32,394 --> 00:00:34,938
+Ese transporte ocurre sobre los microtúbulos:
+
+10
+00:00:34,938 --> 00:00:38,103
+tubos huecos formados por una proteína llamada tubulina.
+
+11
+00:00:38,553 --> 00:00:40,668
+Funcionan como rieles.
+
+12
+00:00:40,668 --> 00:00:47,973
+Proteínas motoras, como la quinesina, caminan sobre ellos llevando su carga.
+
+13
+00:00:49,872 --> 00:00:51,546
+Acá entra en escena tau:
+
+14
+00:00:51,546 --> 00:00:56,358
+una proteína asociada a los microtúbulos, codificada por el gen MAPT,
+
+15
+00:00:56,358 --> 00:00:58,450
+y muy abundante en los axones.
+
+16
+00:00:58,900 --> 00:01:02,816
+Tau se une a la superficie de los microtúbulos,
+
+17
+00:01:02,816 --> 00:01:07,398
+los estabiliza y favorece el ensamblaje de la tubulina.
+
+18
+00:01:07,398 --> 00:01:11,397
+Así, los rieles se mantienen firmes y ordenados.
+
+19
+00:01:13,297 --> 00:01:15,942
+Su unión se regula por fosforilación:
+
+20
+00:01:15,942 --> 00:01:21,590
+unas enzimas, las quinasas, le agregan grupos fosfato, y otras, las fosfatasas,
+
+21
+00:01:21,590 --> 00:01:22,591
+se los quitan.
+
+22
+00:01:23,041 --> 00:01:30,085
+Con pocos fosfatos, tau se adhiere al microtúbulo. Con más fosfatos, se suelta.
+
+23
+00:01:30,535 --> 00:01:32,640
+Este equilibrio dinámico es normal:
+
+24
+00:01:32,640 --> 00:01:35,949
+le permite a la neurona remodelar su esqueleto interno.
+
+25
+00:01:37,849 --> 00:01:41,636
+El problema empieza cuando ese equilibrio se rompe.
+
+26
+00:01:41,636 --> 00:01:45,051
+En varias enfermedades, tau se hiperfosforila:
+
+27
+00:01:45,051 --> 00:01:48,095
+acumula muchos más fosfatos de lo normal.
+
+28
+00:01:48,545 --> 00:01:52,946
+Entonces se desprende, y los microtúbulos se vuelven inestables y se desarman.
+
+29
+00:01:53,396 --> 00:01:57,533
+El transporte se interrumpe, y la carga ya no llega a las sinapsis.
+
+30
+00:01:59,434 --> 00:02:00,849
+Libre en el citoplasma,
+
+31
+00:02:00,849 --> 00:02:04,849
+tau cambia de forma y empieza a pegarse a otras moléculas de tau.
+
+32
+00:02:05,299 --> 00:02:08,503
+Primero forma pequeños agregados, los oligómeros,
+
+33
+00:02:08,503 --> 00:02:11,119
+que se consideran especialmente tóxicos.
+
+34
+00:02:11,569 --> 00:02:14,669
+Después, filamentos helicoidales apareados.
+
+35
+00:02:14,669 --> 00:02:20,435
+Y finalmente, grandes marañas dentro de la neurona: los ovillos neurofibrilares.
+
+36
+00:02:22,335 --> 00:02:26,340
+Las sinapsis fallan y, con el tiempo, la neurona muere.
+
+37
+00:02:26,790 --> 00:02:27,220
+Además,
+
+38
+00:02:27,220 --> 00:02:30,536
+la tau mal plegada puede pasar a neuronas conectadas y
+
+39
+00:02:30,536 --> 00:02:33,300
+hacer que la tau sana también se pliegue mal,
+
+40
+00:02:33,300 --> 00:02:35,081
+de forma parecida a un prion.
+
+41
+00:02:35,531 --> 00:02:40,846
+En el Alzheimer, este avance suele seguir un recorrido predecible:
+
+42
+00:02:40,846 --> 00:02:47,289
+empieza en la corteza entorrinal, sigue por el hipocampo, clave para la memoria,
+
+43
+00:02:47,289 --> 00:02:50,832
+y luego se extiende por la corteza cerebral.
+
+44
+00:02:52,732 --> 00:02:59,299
+Las enfermedades con acumulación anormal de tau se llaman tauopatías.
+
+45
+00:02:59,749 --> 00:03:00,579
+En el Alzheimer,
+
+46
+00:03:00,579 --> 00:03:03,172
+los ovillos de tau dentro de las neuronas aparecen
+
+47
+00:03:03,172 --> 00:03:05,039
+junto a las placas de beta-amiloide,
+
+48
+00:03:05,039 --> 00:03:06,232
+que se acumulan afuera.
+
+49
+00:03:06,682 --> 00:03:10,058
+Otras tauopatías son la demencia frontotemporal,
+
+50
+00:03:10,058 --> 00:03:15,333
+la parálisis supranuclear progresiva y la encefalopatía traumática crónica.
+
+51
+00:03:17,233 --> 00:03:19,111
+Hoy se investigan anticuerpos contra tau,
+
+52
+00:03:19,111 --> 00:03:22,363
+fármacos que frenan su agregación y terapias que reducen su producción.
+
+53
+00:03:22,813 --> 00:03:28,102
+Entender cómo actúa tau es clave para, algún día, frenar la neurodegeneración.
+
