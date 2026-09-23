@@ -1063,7 +1063,8 @@ def scene_fosforilacion(img, t, S):
     px = lerp(prest[0], ptarget[0], pnear)
     py = lerp(prest[1], ptarget[1], pnear)
     enzyme(cv, px, py, 38, PHOSPHATASE, t + 1, a=pa)
-    label(cv, px, py - 38, "fosfatasa (quita fosfato)", t, S.kw(0, "fosfatasas"), dx=-30, dy=-50, size=22)
+    label(cv, px, py - 38, "fosfatasa (quita fosfato)", t, S.kw(0, "fosfatasas"), dx=-30, dy=-50, size=22,
+          t_out=S.kw(2, "equilibrio") - 0.5)
     label(cv, A[1] + 40, MTS[1].y - 200, "se suelta", t, S.kw(1, "se suelta"), dx=0, dy=0, size=24,
           t_out=rem_start + 1.2, color=ORANGE_L)
     label(cv, cx, cy - 165, "equilibrio dinámico", t, S.kw(2, "equilibrio"), dx=0, dy=0, size=26, color=MINT_L)
@@ -1454,19 +1455,33 @@ def wrap(txt, f, maxw, d):
 
 
 def draw_subs(im, t):
+    """Un solo subtítulo por vez; solo hay fundido cuando hay un silencio entre bloques."""
+    subs = TL["subs"]
     d = ImageDraw.Draw(im, "RGBA")
-    for s in TL["subs"]:
-        if s["start"] - 0.08 <= t <= s["end"] + 0.12:
-            a = min(ramp(t, s["start"] - 0.08, s["start"] + 0.06), 1 - ramp(t, s["end"], s["end"] + 0.12))
-            f = font("Nunito", 31, "Bold")
-            lines = wrap(s["text"], f, 1060, d)
-            lh = 40
-            tw = max(d.textlength(l, font=f) for l in lines)
-            y0 = H - 40 - lh * len(lines)
-            d.rounded_rectangle([W / 2 - tw / 2 - 22, y0 - 12, W / 2 + tw / 2 + 22, y0 + lh * len(lines) + 8],
-                                radius=14, fill=(30, 22, 18, int(175 * a)))
-            for j, l in enumerate(lines):
-                d.text((W / 2, y0 + j * lh + lh / 2), l, font=f, fill=(252, 246, 230, int(255 * a)), anchor="mm")
+    for k, s in enumerate(subs):
+        prev_end = subs[k - 1]["end"] if k > 0 else -1e9
+        next_start = subs[k + 1]["start"] if k + 1 < len(subs) else 1e9
+        fade_in = s["start"] - prev_end > 0.15
+        fade_out = next_start - s["end"] > 0.15
+        t0 = s["start"] - (0.08 if fade_in else 0)
+        t1 = s["end"] + (0.12 if fade_out else 0)
+        if not (t0 <= t < t1):
+            continue
+        a = 1.0
+        if fade_in:
+            a = min(a, ramp(t, s["start"] - 0.08, s["start"] + 0.06))
+        if fade_out:
+            a = min(a, 1 - ramp(t, s["end"], s["end"] + 0.12))
+        f = font("Nunito", 31, "Bold")
+        lines = wrap(s["text"], f, 1060, d)
+        lh = 40
+        tw = max(d.textlength(l, font=f) for l in lines)
+        y0 = H - 40 - lh * len(lines)
+        d.rounded_rectangle([W / 2 - tw / 2 - 22, y0 - 12, W / 2 + tw / 2 + 22, y0 + lh * len(lines) + 8],
+                            radius=14, fill=(30, 22, 18, int(175 * a)))
+        for j, l in enumerate(lines):
+            d.text((W / 2, y0 + j * lh + lh / 2), l, font=f, fill=(252, 246, 230, int(255 * a)), anchor="mm")
+        break
 
 
 def frame(t):
