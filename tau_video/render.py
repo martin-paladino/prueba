@@ -1036,11 +1036,11 @@ def scene_fosforilacion(img, t, S):
     # Guion de eventos de la tau A
     add1 = L[0] + 2.0
     add2 = S.kw(1, "con más") + 0.2
-    add3 = add2 + 0.9
-    rem_start = L[2] + 0.4
+    add3 = add2 + 0.6
+    rem_start = L[2] + 1.2
     phos = (ramp(t, add1, add1 + 0.4) + ramp(t, add2, add2 + 0.4) + ramp(t, add3, add3 + 0.4)
             - ramp(t, rem_start, rem_start + 0.5) - ramp(t, rem_start + 1.1, rem_start + 1.6))
-    detach = ramp(t, add3 + 0.3, add3 + 1.6) * (1 - ramp(t, rem_start + 1.8, rem_start + 3.2))
+    detach = ramp(t, add3 + 0.2, add3 + 1.1) * (1 - ramp(t, rem_start + 1.8, rem_start + 3.2))
     for site, ph in ((B, 1), (C, 1)):
         tau_site_draw(cv, t, site, 1.0, phos=ph * ramp(t, L[0] + 3.5, L[0] + 4), drift=(0, 0))
     tau_site_draw(cv, t, A, 1 - detach, phos=phos, drift=(40, -60))
@@ -1066,7 +1066,7 @@ def scene_fosforilacion(img, t, S):
     label(cv, px, py - 38, "fosfatasa (quita fosfato)", t, S.kw(0, "fosfatasas"), dx=-30, dy=-50, size=22)
     label(cv, A[1] + 40, MTS[1].y - 200, "se suelta", t, S.kw(1, "se suelta"), dx=0, dy=0, size=24,
           t_out=rem_start + 1.2, color=ORANGE_L)
-    label(cv, cx, cy + 230, "equilibrio dinámico", t, S.kw(2, "equilibrio"), dx=0, dy=0, size=26, color=MINT_L)
+    label(cv, cx, cy - 165, "equilibrio dinámico", t, S.kw(2, "equilibrio"), dx=0, dy=0, size=26, color=MINT_L)
 
 
 # 6 --------------------------------------------------------------------------
@@ -1222,12 +1222,12 @@ def scene_propagacion(img, t, S):
             rays(cv2, t, (255, 220, 170), a=0.25, n=60)
             lt = t - net_t
             for i, n in enumerate(NET):
-                inf = ramp(lt, 1.0 + i * 2.1, 2.2 + i * 2.1)
+                inf = ramp(lt, 0.8 + i * 1.7, 1.9 + i * 1.7)
                 n.draw(cv2, t, tangle=inf * 0.8, dark=0.5, glow=0.35 * inf, tint=((230, 160, 110), inf * 0.35))
                 if i < len(NET) - 1:
                     ax = n.axon_world()
                     for j in range(5):
-                        s = clamp((lt - 1.2 - i * 2.1) / 1.8 - j * 0.12)
+                        s = clamp((lt - 1.0 - i * 1.7) / 1.5 - j * 0.12)
                         if 0 < s < 1:
                             p = path_point(ax, s)
                             cv2.glow(p[0], p[1], 30, (255, 150, 90), a=0.6, steps=5)

@@ -22,7 +22,7 @@ FFMPEG = imageio_ffmpeg.get_ffmpeg_exe()
 
 SCENE_PAD_IN = 0.9     # silencio al empezar cada escena
 SCENE_PAD_OUT = 1.0    # silencio al terminar cada escena
-LINE_GAP = 0.45        # silencio entre frases
+LINE_GAP = 0.55        # silencio entre frases
 INTRO_EXTRA = 1.6      # título inicial antes de hablar
 OUTRO_EXTRA = 4.0      # título final
 
@@ -186,7 +186,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--voice", required=True)
     ap.add_argument("--out", default="build")
-    ap.add_argument("--length-scale", type=float, default=1.08)
+    ap.add_argument("--length-scale", type=float, default=1.3)
     args = ap.parse_args()
     os.makedirs(os.path.join(args.out, "lines"), exist_ok=True)
 
@@ -226,7 +226,9 @@ def main():
         voice[i0:i0 + len(a)] += a[: total_n - i0]
     voice = voice / (np.abs(voice).max() + 1e-9) * 0.89
 
-    music = ambient_music(total_n / SR)[:total_n]
+    music = ambient_music(total_n / SR + 0.1)[:total_n]
+    if len(music) < total_n:
+        music = np.pad(music, ((0, total_n - len(music)), (0, 0)))
     # Ducking: la música baja cuando hay voz.
     env = np.convolve(np.abs(voice), np.ones(int(0.3 * SR)) / (0.3 * SR), mode="same")
     duck = 1.0 - 0.55 * np.clip(env / 0.05, 0, 1)

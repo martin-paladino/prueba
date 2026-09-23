@@ -23,7 +23,7 @@ que se pasó de ejemplo.
 - `output/proteina_tau.mp4`: video final (subtítulos incrustados).
 - `output/proteina_tau.srt`: subtítulos en archivo aparte.
 - `tau_video/script.py`: guion (texto de subtítulos y texto para la voz).
-- `tau_video/make_audio.py`: narración con [Piper](https://github.com/rhasspy/piper) (offline), música ambiente sintetizada, línea de tiempo y `.srt`.
+- `tau_video/make_audio.py`: narración con [Piper](https://github.com/rhasspy/piper) (voz argentina `es_AR-daniela-high`, se genera sin conexión), música ambiente sintetizada, línea de tiempo y `.srt`.
 - `tau_video/render.py`: animación cuadro por cuadro con Pillow y codificación con ffmpeg.
 - `assets/fonts/`: Fredoka y Nunito (licencia SIL OFL).
 
@@ -32,6 +32,9 @@ que se pasó de ejemplo.
 ```bash
 ./build.sh
 ```
+
+La primera vez descarga la voz desde Hugging Face, así que el entorno necesita acceso a
+`huggingface.co` y `*.hf.co`.
 
 Para cambiar el texto, editá `tau_video/script.py` y volvé a correr `./build.sh`; la animación
 se sincroniza sola con la duración de cada frase.
